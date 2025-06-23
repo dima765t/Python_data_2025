@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>הערכת שכר דירה</title>
+</head>
+<body>
+    <h1>הערכת שכר דירה</h1>
+    <form method="post">
+        <label>כתובת:</label>
+        <input type="text" name="address"><br>
+        <label>מספר חדרים:</label>
+        <input type="number" step="0.5" name="room_num"><br>
+        <!-- Add more fields as needed... -->
+
+        <button type="submit">הערך שכר דירה</button>
+    </form>
+    {% if predicted_price %}
+        <h2>שכר הדירה החזוי: {{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
