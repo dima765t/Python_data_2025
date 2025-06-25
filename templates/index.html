@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 
@@ -13,19 +12,21 @@
     <form method="post">
         <!---->
         <label for="address">כתובת:</label>
-        <input type="text" id="address" name="address"><br><br>
+        <input type="text" id="address" name="address" value="{{ entered_address }}"><br><br>
         <!---->
         <label for="room_num">מספר חדרים:</label>
-        <input type="number" id="room_num" name="room_num" step="0.5"><br><br>
+        <input type="number" id="room_num" name="room_num" step="0.5" value="{{ entered_room_num }}"><br><br>
         <!---->
-        <label for="area">שטח בנוי:</label>
-        <input type="number" id="area" name="area" step="5"><br><br>
+        <label for="area">שטח בנוי (מ"ר):</label>
+        <input type="number" id="area" name="area" step="5" value="{{ entered_area }}"><br><br>
         <!---->
         <button type="submit">הערך שכר דירה</button>
     </form>
 
     {% if predicted_price %}
-        <h2>שכר הדירה החזוי: {{ predicted_price }}</h2>
+        <div style="direction: ltr; text-align: center;">
+            <h2>{{ predicted_price }}</h2>
+        </div>
     {% endif %}
 </body>
 </html>
